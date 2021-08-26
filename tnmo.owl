@@ -187,6 +187,19 @@
         <rdfs:label>tnmo:tn_event</rdfs:label>
     </owl:ObjectProperty>
     
+   <!-- http://127.0.0.1/tnmo/sameAs -->
+
+    <owl:ObjectProperty rdf:about="http://127.0.0.1/tnmo/sameAs">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/toco/Device"/>
+		<rdfs:domain rdf:resource="http://purl.org/toco/User"/>
+        <rdfs:range rdf:resource="http://127.0.0.1/TNSeg-1/Device"/>
+		<rdfs:range rdf:resource="http://127.0.0.1/TNSeg-2/Device"/>
+        <rdfs:range rdf:resource="http://127.0.0.1/TNSeg-1/User"/>
+		<rdfs:range rdf:resource="http://127.0.0.1/TNSeg-2/User"/>
+        <rdfs:label>tnmo:tn_event</rdfs:label>
+    </owl:ObjectProperty>
+    
 
 
     <!-- 
@@ -298,11 +311,21 @@
 
 
     <!-- http://purl.org/toco/Device -->
-
     <owl:Class rdf:about="http://purl.org/toco/Device">
         <rdfs:label>net:Device</rdfs:label>
+        <tnmo:sameAs>TNSeg-1:Device</tnmo:sameAs>
+        <tnmo:sameAs>TNSeg-2:Device</tnmo:sameAs>
     </owl:Class>
-    
+
+
+
+    <!-- http://purl.org/toco/User -->
+    <owl:Class rdf:about="http://purl.org/toco/User">
+        <rdfs:label>net:User</rdfs:label>
+        <tnmo:sameAs>TNSeg-1:User</tnmo:sameAs>
+        <tnmo:sameAs>TNSeg-2:User</tnmo:sameAs>
+    </owl:Class>
+
 
 
     <!-- http://purl.org/toco/Interface -->
@@ -317,14 +340,6 @@
 
     <owl:Class rdf:about="http://purl.org/toco/Service">
         <rdfs:label>net:Service</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/toco/User -->
-
-    <owl:Class rdf:about="http://purl.org/toco/User">
-        <rdfs:label>net:User</rdfs:label>
     </owl:Class>
     
 
